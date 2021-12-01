@@ -26,5 +26,6 @@ urlpatterns = [
     path('cuenta/', cuenta_view),
     path('calendario/', calendar_view),
     path('perfil/', perfil_view),
-
+    path('config/', config_view),
+    path('ramos/', ramos_view),
 ]

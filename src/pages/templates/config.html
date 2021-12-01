@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Focus - Configuración</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='{% static "config.css" %}'>
+    </head>
+    <body class='ventana' style='background-image: url("{% static '456.jpg' %}");'>
+        <div>
+        <h1 class='title' align='center'>Configuración</h1>
+        </div>
+        <div class='grid_container'>
+            <div class='button'>
+                <p align='center'><a href="http://127.0.0.1:8000/ramos">Ramos</a></p>
+            </div>
+            <div class='button'>
+                <p align='center'><a href="http://127.0.0.1:8000/perfil">Perfil</a></p>
+            </div>
+        </div>
+    </body>
+</html>

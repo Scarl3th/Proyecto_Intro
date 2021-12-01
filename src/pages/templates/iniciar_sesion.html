@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Focus - Iniciar Sesión</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='{% static "inicio.css" %}'>
+    </head>
+    <body class='ventana' style='background-image: url("{% static '456.jpg' %}");'>
+        <div>
+        <h1 class='title' align='center'>Iniciar Sesión</h1>
+        </div>
+        <form>
+        <div class='bloque' style="margin-left: 215px;">
+            
+            <div style="margin-left: 250px; padding-top: 110px;">
+                <label for='username' style="font-size:30px;">Nombre de usuario:</label>
+                <input class='entrada' type='text' name='username' style="height: 20px; width: 200px; margin-bottom: 25px;">
+            </div>
+    
+            <div style="margin-left: 354px">
+                <label for='password' style="font-size:30px;">Contraseña:</label>
+                <input class='entrada' type='password' name='password' style="height: 20px; width: 200px; margin-bottom: 10px;">
+            </div>
+
+            <div>
+                <input class='button' type="submit" value="Ingresar" style="margin-left: 625px; margin-top: 30px;">
+            </div>
+
+        </div>
+        </form>
+    </body>
+</html>
+

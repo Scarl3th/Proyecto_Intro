@@ -1,0 +1,80 @@
+.ventana{
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+.grid1{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.grid2{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 550px 550px;
+    grid-gap: 200px;
+}
+
+.grid2 .g2_column1{
+    margin-top: 100px;
+}
+
+.grid2 .g2_column2{
+    margin-top: 68px;
+}
+.title{
+    font-size: 50px;
+    color: white;
+    margin-left: 40px;
+}
+label{
+    color: white;
+    font-size: 30px;
+}
+
+.box{
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+
+.entrada{
+    height: 20px;
+    width: 200px;
+}
+
+.subtitle{
+    font-size: 30px;
+    color: white;
+}
+
+.colorcito{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    margin-inline: 10px;
+    transition: all 0.1s ease;
+}
+
+.colorcito:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.button{
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 70px;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.080);
+    font-size: 17px;
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+.button:hover{
+    background-color: rgba(255, 255, 255, 0.171);
+    cursor: pointer;
+}
