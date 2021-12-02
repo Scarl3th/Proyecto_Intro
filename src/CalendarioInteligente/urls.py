@@ -16,16 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+#Hola, cambie las views del calendario
 from pages.views import home_view, inicio_view, cuenta_view, calendar_view, config_view, perfil_view, ramos_view
-
+from pag_calendario.views import calendario_view, formularioEventos_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home_view),
     path('', inicio_view),
     path('cuenta/', cuenta_view),
-    path('calendario/', calendar_view),
+    path('calendario/', calendario_view),
     path('perfil/', perfil_view),
     path('config/', config_view),
     path('ramos/', ramos_view),
+    path('eventos/', formularioEventos_view)
 ]

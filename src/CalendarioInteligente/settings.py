@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'randp',
     'pages',
+    'pag_calendario',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'pages/static'),
+    os.path.join(BASE_DIR, 'pag_calendario/static'),
+    #Si no funciona poner los static en el primer directorio
 ]
 
 # Default primary key field type

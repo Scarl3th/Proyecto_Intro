@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'calendario_view.css' %}">   
+    <link rel="stylesheet" href= "{% static 'evo-calendar.min.css' %}"> 
+    <link rel="stylesheet" href= "{% static 'evo-calendar.midnight-blue.min.css'%}"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div class= "hero">
+        <div id = "calendar"></div>
+        a 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script> 
+    <script src= "{%static 'evo-calendar.min.js'%}"></script> 
+
+    <script>  
+        $(document).ready(function() {
+
+            $('#calendar').evoCalendar({
+                theme: 'Midnight Blue', //Si se le saca esto queda claro
+                language: 'es',
+                todayHighlight: true,
+                format: 'mm/dd/yyyy',
+    
+                
+                calendarEvents : {{eventos|safe}},                               
+             })
+            })      
+    </script>
+
+</body>
+</html>
