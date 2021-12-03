@@ -29,15 +29,49 @@
                 <th>Domingo</th>
         	</tr>
         	<tr>
-           		<td></td>
-            	<td></td>
-            	<td></td>
-            	<td></td>
-            	<td></td>
-            	<td></td>
-            	<td></td>
+           		<td>
+					{% for evento in lista_dias.0 %}
+					{{evento}}
+					</br>
+					{%endfor%}					
+				</td>
+            	<td>
+					{% for evento in lista_dias.1 %}
+					{{evento}}
+					</br>
+					{%endfor%}	
+				</td>
+            	<td>
+					{% for evento in lista_dias.2 %}
+					{{evento}}
+					</br>
+					{%endfor%}	
+				</td>
+            	<td>
+					{% for evento in lista_dias.3 %}
+					{{evento}}
+					</br>
+					{%endfor%}	
+				</td>
+            	<td>
+					{% for evento in lista_dias.4 %}
+					{{evento}}
+					</br>	
+					{%endfor%}	
+				</td>
+            	<td>
+					{% for evento in lista_dias.5 %}
+					{{evento}}
+					</br>
+					{%endfor%}	
+				</td>
+            	<td>
+					{% for evento in lista_dias.0 %}
+					{{evento}}
+					</br>
+					{%endfor%}	
+				</td>
         	</tr>
 		</table>
  	</body>
 </html>
-
