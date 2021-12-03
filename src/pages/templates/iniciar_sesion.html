@@ -12,7 +12,8 @@
         <div>
         <h1 class='title' align='center'>Iniciar Sesión</h1>
         </div>
-        <form>
+        <form method="POST">
+        {% csrf_token %}
         <div class='bloque' style="margin-left: 215px;">
             
             <div style="margin-left: 250px; padding-top: 110px;">

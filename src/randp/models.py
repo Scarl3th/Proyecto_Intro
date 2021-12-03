@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Ramos_y_preferencias(models.Model):
@@ -34,3 +35,5 @@ class Ramos_y_preferencias(models.Model):
 		choices = eleccion_colores,
 		default = ROJO 	
 	)
+
+	usuario = models.ForeignKey( User, on_delete=models.CASCADE)
