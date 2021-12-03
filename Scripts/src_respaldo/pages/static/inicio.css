@@ -1,0 +1,43 @@
+.ventana{
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+.title{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-size: 50px;
+    color: white;
+}
+
+.bloque{
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 300px;
+    margin-top: 65px;
+}
+
+.button{
+    background-color: #76B1B1;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'M PLUS 1', sans-serif;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #1E6464;
+    #1E6464
+}
+/*{
+    height: 20px;
+    width: 200px;
+    margin-bottom: 10px;
+
+}*/

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Focus - Perfil</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='{% static "perfil.css" %}'>
+    </head>
+    <body class='ventana' style='background-image: url("{% static '456.jpg' %}");'>
+        <div class='grid1' align='center'>
+            <h1 class='title'>Perfil</h1>
+        </div>
+        <form>
+        <div class='grid2'>
+            <div class='g2_column1'>
+                <div>
+                    <div class="box" align='right'>
+                        <label>Nombre de usuario:</label>
+                        <input class='entrada' type='username' name="username" value='TheLegend27'>
+                    </div>
+                    <div class="box" align='right'>
+                        <label>Contraseña:</label>
+                        <input class='entrada' type='password' name="password">
+                    </div>
+                    <div class="box" align='right'>
+                        <label>E-mail:</label>
+                        <input class="entrada" type="email" name="email">
+                    </div>
+                </div>
+            </div>
+            <div class='g2_column2'>
+                <div>
+                    <p class="subtitle" align='center'>Seleccionar Tema</p>
+                </div>
+                <div class='opciones' align='center'>
+                    <div class="colorcito" style="background-color: #8773c1;"></div>
+                    <div class="colorcito" style="background-color: #222831;"></div>
+                    <div class="colorcito" style="background-color: #206380;"></div>
+                    <div class="colorcito" style="background-color: #ff7a64;"></div>
+                </div>
+                <div align='right'>
+                    <input class='button' type="submit" name="send" value="Guardar cambios">
+                    <input class='button' type="reset" name="reset" value="Restablecer" style="margin-right: 40px;">
+                </div>
+            </div>
+        </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+</head>
+
+<body>
+<div>
+<form method = "POST" id = "form">
+    {%csrf_token%}
+    {{form.as_p}} 
+    <button type="submit" form="form" value="Submit">Submit</button>
+</form>
+</div>
+
+<div>
+<form method = "POST" id = "form1">
+    {%csrf_token%}
+    {{form1.as_p}} 
+    <button type="submit" form="form1" value="Delete">delete</button>
+</form>
+</div>
+<p>Id de cada evento:</p>
+{%for evento in lista%}
+   <p> {{evento.id}} - {{evento.nombre}} </p>
+
+{%endfor%}
+
+</body>
+</html>
