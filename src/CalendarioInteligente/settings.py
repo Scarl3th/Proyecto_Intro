@@ -12,8 +12,17 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+
 from django.urls import reverse_lazy
-from pages.views import home_view
+
+
+'''
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "CalendarioInteligente.settings")
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+'''
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -108,6 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -121,8 +132,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = reverse_lazy(home_view)
-
+#from pages.views import home_view
+LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/home"
 
 
 # Static files (CSS, JavaScript, Images)
@@ -141,3 +152,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#AUTH_USER_MODEL = "pag_calendario.models.Ramos_y_preferencias"

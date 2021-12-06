@@ -22,10 +22,11 @@
 </form>
 </div>
 <p>Id de cada evento:</p>
-{%for evento in lista%}
-   <p> {{evento.id}} - {{evento.nombre}} </p>
-
-{%endfor%}
+{% if lista %}
+    {%for evento in lista%}
+    <p> {{evento.id}} - {{evento.nombre}} </p>
+    {%endfor%}
+{%endif%}
 
 </body>
 </html>
