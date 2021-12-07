@@ -14,17 +14,27 @@
         </div>
         <div class='list'>
             <ul>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
-                <li>holi</li>
+                {%if lista_ramos%}
+                {% for ramo in lista_ramos %}
+                <li>{{ramo.nombre}}</li>
+                {% endfor %}
+                {%endif%}
+                
             </ul>
         </div>
+
+        <form method= "POST" id = "form">
+            {%csrf_token%}
+            {{form.as_p}} 
+            <button type="submit" form="form" value="Submit">Submit</button>
+        </form>
+
+        <form method= "POST" id = "form1">
+            {%csrf_token%}
+            {{form1.as_p}} 
+            <button type="submit" form="form1" value="Delete">Delete</button>
+        </form>
+
+        
     </body>
 </html>

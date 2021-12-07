@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import eventos
 from .forms import formularioEventos, eliminarEvento
+from randp.models import Ramos_y_preferencias
 
 # Create your views here.
 def calendario_view(request):
@@ -25,24 +26,31 @@ def calendario_view(request):
 #view que renderiza los formularios:
 def formularioEventos_view(request):
     #Formulario para ingresar eventos
-    form = formularioEventos(request.POST or None, request = request)
+    form = formularioEventos(request.POST or None, user = request.user)
+
     if form.is_valid():
         #Cuatro lineas siguientes permiten que sea para el usuario
         evnt = form.save(commit=False)
         evnt.usuario = request.user  
         evnt.save()
         form = formularioEventos()
+    
 
     #Formulario para eliminar eventos
+
     form1 = eliminarEvento(request.POST or None, request = request)
     if form1.is_valid():
-        evento = eventos.objects.filter(usuario = request.user).get(pk = int(form1['event_id'].value()))
+    
+        evento = eventos.objects.filter(usuario = request.user).filter(nombre =  form1['event_id'].value())
+        print("evento", evento)
+        evento = evento[0] #Para que solo se elimine el primero que se ingreso, en caso de que tenga hayan eventos con el mismo nombre
         evento.delete()
-        form1 = eliminarEvento()
+
+        form1 = eliminarEvento(request = request)
 
     context = {
         'form' : form,
         'form1' : form1,
-        'lista' : eventos.objects.filter(usuario = request.user).all()
     }
+
     return render(request, "formularioEventos.html", context)

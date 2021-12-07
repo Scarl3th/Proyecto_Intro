@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .forms import Randp_form, Eliminar_ramo_form
+
+#Lógica de la página
 from randp.models import Ramos_y_preferencias
 from pag_calendario.models import eventos
 import datetime
@@ -79,5 +82,33 @@ def config_view(request,*args, **kwargs):
 def perfil_view(request, *args, **kwargs):
 	return render(request,'perfil.html', {})
 
+#Rednerizacion de ramos (incluyendo el formulario)
 def ramos_view(request, *args, **kwargs):
-	return render(request,'ramos.html', {})
+
+	#Formulario ingresar ramos:
+	form = Randp_form(request.POST or None)
+	if form.is_valid():
+		ramo = form.save(commit = False)
+		ramo.usuario = request.user
+		ramo.save()
+		form = Randp_form()
+
+	#Formulario eliminar ramos
+	form1 = Eliminar_ramo_form(request.POST or None, user =request.user)
+	if form1.is_valid():
+		ramo1 = Ramos_y_preferencias.objects.filter(usuario = request.user).filter(nombre = form1['ramo_id'].value())
+		print("ramo:" ,ramo1)
+		ramo1 = ramo1[0]
+		ramo1.delete()
+		print("Lista completa:", Ramos_y_preferencias.objects.filter(usuario = request.user))
+
+		#Hay que hacer un mejor formulario 
+		form1 = Eliminar_ramo_form(user = request.user)
+
+	#Pasaré una lista con los ramos:
+	lista_ramos = Ramos_y_preferencias.objects.filter(usuario = request.user)
+
+
+	context = {"form" : form, "form1" : form1, "lista_ramos" : lista_ramos}
+	
+	return render(request,'ramos.html', context)

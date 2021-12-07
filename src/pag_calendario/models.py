@@ -12,4 +12,4 @@ class eventos(models.Model):
 
 #Modelo para eliminar eventos
 class eliminar(models.Model):
-    event_id = models.IntegerField()
+    event_id = models.CharField(max_length=120)

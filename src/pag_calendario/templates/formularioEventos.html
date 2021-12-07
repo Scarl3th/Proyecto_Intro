@@ -20,13 +20,7 @@
     {{form1.as_p}} 
     <button type="submit" form="form1" value="Delete">delete</button>
 </form>
-</div>
-<p>Id de cada evento:</p>
-{% if lista %}
-    {%for evento in lista%}
-    <p> {{evento.id}} - {{evento.nombre}} </p>
-    {%endfor%}
-{%endif%}
+
 
 </body>
 </html>

@@ -37,3 +37,8 @@ class Ramos_y_preferencias(models.Model):
 	)
 
 	usuario = models.ForeignKey( User, on_delete=models.CASCADE)
+
+class Eliminar_ramo(models.Model):
+	ramo_id = models.IntegerField()
+
+
