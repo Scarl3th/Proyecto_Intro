@@ -33,7 +33,7 @@ def formularioEventos_view(request):
         evnt = form.save(commit=False)
         evnt.usuario = request.user  
         evnt.save()
-        form = formularioEventos()
+        form = formularioEventos(user = request.user) #Añadir esto de user = request.user pk normalmente se elimina
     
 
     #Formulario para eliminar eventos
@@ -42,8 +42,7 @@ def formularioEventos_view(request):
     if form1.is_valid():
     
         evento = eventos.objects.filter(usuario = request.user).filter(nombre =  form1['event_id'].value())
-        print("evento", evento)
-        evento = evento[0] #Para que solo se elimine el primero que se ingreso, en caso de que tenga hayan eventos con el mismo nombre
+        evento = evento[0]
         evento.delete()
 
         form1 = eliminarEvento(request = request)
