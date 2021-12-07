@@ -6,7 +6,7 @@ from randp.models import Ramos_y_preferencias
 class formularioEventos(forms.ModelForm):
     nombre = forms.CharField(widget=forms.TextInput(attrs={"placeholder" : "Nombre de la evaluacion..." }))
     fecha  = forms.DateField(widget=forms.DateInput(attrs={"placeholder" : "aaaa-mm-dd" }))
-    descripcion  = forms.CharField(widget=forms.Textarea(attrs={"placeholder" : "Ingrese una descripcion de su evaluacion", "rows": 15, "cols": 50}))
+    descripcion  = forms.CharField(widget=forms.Textarea(attrs={"placeholder" : "Ingrese una descripcion de su evaluacion", "rows": 10, "cols": 40}))
     prioridad = forms.IntegerField(widget = forms.TextInput(attrs = {"placeholder" : "Prioridad de la evaluacion 1-10", "size": 30 }))
     
     ramo = forms.ChoiceField(choices = [("luego será reescrito", "asi que no importa")])
@@ -26,7 +26,7 @@ class formularioEventos(forms.ModelForm):
             opciones.append((ramo.nombre, ramo.nombre))
 
         self.fields['ramo'].choices = opciones
-        self.fields['descripcion'].label = "aa"
+        self.fields['descripcion'].label = "Descripcion"
 
     
     def clean_prioridad(self, *args, **kwargs):

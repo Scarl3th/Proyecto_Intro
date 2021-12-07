@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>Calendar</title>
+    {% load static %}
+    <title>Focus - Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='{% static "eventos.css" %}'>
+
 </head>
 
-<body>
+<body class='ventana' style='background-image: url("{% static '456.jpg' %}");'>
 <div>
-<form method = "POST" id = "form">
-    {%csrf_token%}
-    {{form.as_p}} 
-    <button type="submit" form="form" value="Submit">Submit</button>
-</form>
+    <h1 align='center'>Eventos</h1>
 </div>
+<div class='grid'>
+    <div class='column1'>
+        <h3>Nuevo Evento</h3>
+        <form method = "POST" id = "form">
+            {%csrf_token%}
+            {{form.as_p}} 
+            <button type="submit" form="form" value="Submit">Agregar Evento</button>
+        </form>
+    </div>
 
-<div>
-<form method = "POST" id = "form1">
-    {%csrf_token%}
-    {{form1.as_p}} 
-    <button type="submit" form="form1" value="Delete">delete</button>
-</form>
-
-
+    <div class='column2'>
+        <h3>Eliminar Evento</h3>
+        <form method = "POST" id = "form1">
+            {%csrf_token%}
+            {{form1.as_p}} 
+            <button type="submit" form="form1" value="Delete">Eliminar Evento</button>
+        </form>
+    </div>
+    <div>
+        <a href="http://127.0.0.1:8000/home/"><div class='boton'>Volver</div></a>
+    </div>
+</div>
 </body>
 </html>

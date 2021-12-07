@@ -64,7 +64,6 @@ label{
 
 .button{
     color: white;
-    background-color: rgba(255, 255, 255, 0);
     margin-top: 70px;
     padding: 15px 32px;
     border: none;
@@ -75,6 +74,38 @@ label{
 }
 
 .button:hover{
+    background-color: rgba(255, 255, 255, 0.171);
+    cursor: pointer;
+}
+
+a{
+    cursor: pointer;
+}
+a:link, a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+a:link:active, a:visited:active{
+    color: white;
+}
+
+.boton{
+    color: white;
+    margin-top: 70px;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.080);
+    font-size: 17px;
+    font-family: 'M PLUS 1', sans-serif;
+    width: 90px;
+    height: 25px;
+    margin-top: 150px;
+    margin-left: 1250px;
+}
+
+.boton:hover{
     background-color: rgba(255, 255, 255, 0.171);
     cursor: pointer;
 }

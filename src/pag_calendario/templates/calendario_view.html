@@ -7,7 +7,8 @@
     {% load static %}
     <link rel="stylesheet" href= "{% static 'calendario_view.css' %}">   
     <link rel="stylesheet" href= "{% static 'evo-calendar.min.css' %}"> 
-    <link rel="stylesheet" href= "{% static 'evo-calendar.midnight-blue.min.css'%}"> 
+    <link rel="stylesheet" href= "{% static 'evo-calendar.midnight-blue.min.css'%}">
+    <link rel="stylesheet" href= "{% static 'calendar.css' %}">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">    
@@ -17,6 +18,8 @@
         <p style ='color: rgba(0,0,0,0);'>a</p> 
         <div id = "calendar"></div>
     </div>
+    <div>
+    <p style ='color: rgba(0,0,0,0);'>a</p> 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script> 
     <script src= "{%static 'evo-calendar.min.js'%}"></script> 
 
@@ -34,6 +37,11 @@
              })
             })      
     </script>
+    </div>
+    <div>
+    <a href="http://127.0.0.1:8000/home/" align='right'><div class='boton'>Organización Semanal</div></a>
+    </div>
+
 
 </body>
 </html>

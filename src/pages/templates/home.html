@@ -17,6 +17,9 @@
 			<a href='http://127.0.0.1:8000/calendario'>
 			<img src="{% static 'calendaricon.png' %}" alt="calendar">
 			</a>
+			<a href='http://127.0.0.1:8000/eventos'>
+			<img src="{% static 'eventsicon.png' %}" alt="eventos" style='width: 60px; height: 60px; padding-top: 27px;'>
+			</a>
 		</div>
     	<table align="center" class='table'>
         	<tr>
@@ -30,45 +33,53 @@
         	</tr>
         	<tr>
            		<td>
-					{% for evento in lista_dias.0 %}
-					{{evento}}
-					</br>
-					{%endfor%}	
-				   </td>
-            	<td>
-					{% for evento in lista_dias.1 %}
-					{{evento}}
-					</br>
-					{%endfor%}
+					<ul>
+						{% for evento in lista_dias.0 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>	
 				</td>
             	<td>
-					{% for evento in lista_dias.2 %}
-					{{evento}}
-					</br>
-					{%endfor%}	
+					<ul>
+						{% for evento in lista_dias.1 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>	
 				</td>
             	<td>
-					{% for evento in lista_dias.3 %}
-					{{evento}}
-					</br>
-					{%endfor%}
+					<ul>
+						{% for evento in lista_dias.2 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>		
 				</td>
             	<td>
-					{% for evento in lista_dias.4 %}
-					{{evento}}
-					</br>	
-					{%endfor%}	
+					<ul>
+						{% for evento in lista_dias.3 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>	
 				</td>
             	<td>
-					{% for evento in lista_dias.5 %}
-					{{evento}}
-					</br>
-					{%endfor%}	
+					<ul>
+						{% for evento in lista_dias.4 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>		
 				</td>
-            	<td>{% for evento in lista_dias.6 %}
-					{{evento}}
-					</br>
-					{%endfor%}	
+            	<td>
+					<ul>
+						{% for evento in lista_dias.5 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>		
+				</td>
+            	<td>
+					<ul>
+						{% for evento in lista_dias.6 %}
+						<li>{{evento}}</li>
+						{%endfor%}
+					</ul>		
 				</td>
         	</tr>
 		</table>

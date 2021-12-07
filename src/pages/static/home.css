@@ -5,7 +5,7 @@
 
 .grid_container{
 	display: grid;
-	grid-template-columns: 1232px 100px 100px;
+	grid-template-columns: 1132px 100px 100px 100px;
 
 }
 .table{
@@ -14,9 +14,9 @@
 }
  .title{
 	 padding-left: 20px;
-	 padding-top: 0px;
-	 padding-bottom: 5px;
-	 font-size: 50px;
+	 padding-top: 5px;
+	 padding-bottom: 10px;
+	 font-size: 40px;
 	 color: white;
  }
 
@@ -29,6 +29,8 @@ th {
 }
 td {
 	height: 520px;
+	color: white;
+	width: 100px;
 }
 
 tr, th, td {
@@ -47,4 +49,9 @@ img {
 img:hover{
 	transform: scale(1.5);
 	cursor: pointer;
+}
+
+li{
+	padding-top: 10px;
+	padding-bottom: 10px;
 }

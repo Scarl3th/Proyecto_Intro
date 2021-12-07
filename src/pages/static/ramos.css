@@ -2,6 +2,13 @@
     font-family: 'M PLUS 1', sans-serif;
 }
 
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /*align-items: flex-start;*/
+    justify-items: center;
+}
+
 .title{
     padding-left: 20px;
     padding-top: 0px;
@@ -11,6 +18,7 @@
 }
 
 .list{
+    grid-column: 1;
     height: 300px;
     width: 400px;
     border: 1px solid white;
@@ -18,10 +26,21 @@
     color: white;
     font-size: 30px;
     overflow-y: scroll;
+    margin-top: 100px;
 }
 
 ul{
     margin-left: 20px;
+}
+
+.form{
+    grid-column: 2;
+    color: white;
+    font-size: 22px;
+}
+
+form{
+    margin-top: 75px;
 }
 
 /* width */
@@ -51,4 +70,54 @@ ul{
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     padding-right: 10px;
+}
+
+button{
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    width: 200px;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.080);
+    font-size: 17px;
+    font-family: 'M PLUS 1', sans-serif;
+    margin-left: 86px;
+}
+
+button:hover{
+    background-color: rgba(255, 255, 255, 0.171);
+    cursor: pointer;
+}
+
+a{
+    cursor: pointer;
+}
+a:link, a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+a:link:active, a:visited:active{
+    color: white;
+}
+
+.boton{
+    color: white;
+    margin-top: 70px;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.080);
+    font-size: 17px;
+    font-family: 'M PLUS 1', sans-serif;
+    width: 90px;
+    height: 25px;
+    margin-top: 91px;
+    margin-left: 1250px;
+}
+
+.boton:hover{
+    background-color: rgba(255, 255, 255, 0.171);
+    cursor: pointer;
 }

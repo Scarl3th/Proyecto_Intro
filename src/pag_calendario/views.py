@@ -6,7 +6,7 @@ from randp.models import Ramos_y_preferencias
 
 # Create your views here.
 def calendario_view(request):
-    objetos = eventos.objects.all()
+    objetos = eventos.objects.filter(usuario = request.user)
     contexto = []
 
     for objeto in objetos:
