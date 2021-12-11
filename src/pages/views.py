@@ -19,6 +19,7 @@ def dias_restantes(fecha_evaluacion):
 #Create your views here.
 def home_view(request,*args, **kwargs):
 	n_dia = datetime.date.today().weekday()
+	print(n_dia)
 	all_eventos = eventos.objects.filter( usuario = request.user)
 	all_ramos = Ramos_y_preferencias.objects.filter( usuario = request.user)
 
@@ -45,7 +46,7 @@ def home_view(request,*args, **kwargs):
 
 			#Cuántos dias antes de la evaluacion va a aparecer en la organización
 			prioridad_total = dic_ramos[ramo][evaluacion][1] * dic_prioridades[ramo]
-			dias_aviso = round(prioridad_total*0.2 +0,8)
+			dias_aviso = round(prioridad_total*0.2 +0.8)
 
 			#Condicional para ver si se debe mostrar la evaluacion
 			if (dias-7 <= dias_aviso):
@@ -64,8 +65,9 @@ def home_view(request,*args, **kwargs):
 
 				#Se añade la evaluacion al dia de la semana correspondiente
 				organizacion[int(dia_calendario)].append(evaluacion)
+	print(organizacion)
 
-	return render(request,"home.html", {"lista_dias" : organizacion})
+	return render(request,"home.html", {"lista_dias" : organizacion, 'today': n_dia}) 
 
 def inicio_view(request,*args, **kwargs):
 	return render(request,"iniciar_sesion.html", {})
@@ -112,3 +114,6 @@ def ramos_view(request, *args, **kwargs):
 	context = {"form" : form, "form1" : form1, "lista_ramos" : lista_ramos}
 	
 	return render(request,'ramos.html', context)
+
+today = datetime.date.today().weekday()
+

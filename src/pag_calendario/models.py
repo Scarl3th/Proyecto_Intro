@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 #Modelo para crear eventos
 class eventos(models.Model):
-    nombre = models.CharField(max_length=120)
+    nombre = models.CharField(max_length=20)
     fecha = models.DateField()
     descripcion = models.TextField(blank=True, null = True,)
     prioridad = models.IntegerField(default = 1)

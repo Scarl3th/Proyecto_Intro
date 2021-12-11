@@ -32,55 +32,70 @@
                 <th>Domingo</th>
         	</tr>
         	<tr>
-           		<td>
-					<ul>
+				{% if today == 0 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
 						{% for evento in lista_dias.0 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>	
-				</td>
-            	<td>
-					<ul>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}		
+					</td>	
+				{% if today == 1 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
 						{% for evento in lista_dias.1 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>	
-				</td>
-            	<td>
-					<ul>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}		
+					</td>
+				{% if today == 2 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
+
 						{% for evento in lista_dias.2 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>		
-				</td>
-            	<td>
-					<ul>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}		
+					</td>
+				{% if today == 3 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
 						{% for evento in lista_dias.3 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>	
-				</td>
-            	<td>
-					<ul>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}		
+					</td>
+				{% if today == 4 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
 						{% for evento in lista_dias.4 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>		
-				</td>
-            	<td>
-					<ul>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}		
+					</td>
+				{% if today == 5 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
 						{% for evento in lista_dias.5 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>		
-				</td>
-            	<td>
-					<ul>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}			
+					</td>
+				{% if today == 6 %}
+            		<td class="eshoy">
+				{% else %}
+					<td>
+				{% endif %}
 						{% for evento in lista_dias.6 %}
-						<li>{{evento}}</li>
-						{%endfor%}
-					</ul>		
-				</td>
+							<p style="padding-left: 5px;"><b>- {{evento}}</b></br></p>
+						{%endfor%}		
+					</td>
         	</tr>
 		</table>
  	</body>
