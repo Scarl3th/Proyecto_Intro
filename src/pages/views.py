@@ -19,7 +19,6 @@ def dias_restantes(fecha_evaluacion):
 #Create your views here.
 def home_view(request,*args, **kwargs):
 	n_dia = datetime.date.today().weekday()
-	print(n_dia)
 	all_eventos = eventos.objects.filter( usuario = request.user)
 	all_ramos = Ramos_y_preferencias.objects.filter( usuario = request.user)
 
@@ -61,11 +60,9 @@ def home_view(request,*args, **kwargs):
 				if dia_calendario > 6:
 					dia_calendario = dia_calendario%7
 
-				print(dia_calendario)
 
 				#Se añade la evaluacion al dia de la semana correspondiente
 				organizacion[int(dia_calendario)].append(evaluacion)
-	print(organizacion)
 
 	return render(request,"home.html", {"lista_dias" : organizacion, 'today': n_dia}) 
 
@@ -88,21 +85,20 @@ def perfil_view(request, *args, **kwargs):
 def ramos_view(request, *args, **kwargs):
 
 	#Formulario ingresar ramos:
-	form = Randp_form(request.POST or None)
+	form = Randp_form(request.POST or None, user = request.user)
 	if form.is_valid():
 		ramo = form.save(commit = False)
 		ramo.usuario = request.user
 		ramo.save()
-		form = Randp_form()
+		form = Randp_form(user = request.user)
 
 	#Formulario eliminar ramos
 	form1 = Eliminar_ramo_form(request.POST or None, user =request.user)
 	if form1.is_valid():
 		ramo1 = Ramos_y_preferencias.objects.filter(usuario = request.user).filter(nombre = form1['ramo_id'].value())
-		print("ramo:" ,ramo1)
-		ramo1 = ramo1[0]
+		
+		eventos.objects.filter(ramo = form1['ramo_id'].value()).delete()
 		ramo1.delete()
-		print("Lista completa:", Ramos_y_preferencias.objects.filter(usuario = request.user))
 
 		#Hay que hacer un mejor formulario 
 		form1 = Eliminar_ramo_form(user = request.user)

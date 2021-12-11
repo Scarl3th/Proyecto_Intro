@@ -36,6 +36,18 @@ class formularioEventos(forms.ModelForm):
         else:
             return numero
 
+    def clean_nombre(self, *args, **kwargs):
+        a = self.cleaned_data.get('nombre')
+        lista = []
+        for b in eventos.objects.filter(usuario = self.user).values_list('nombre', flat = True):
+            lista.append(b)
+
+        if a in lista:
+            raise forms.ValidationError("Ya existe un evento con ese nombre")
+        else:
+            return a
+
+    #No es necesario pues ahora se selecciona el ramo con una lsita
     def clean_ramo(self, *args, **kwargs):
         
         lista_objetos = Ramos_y_preferencias.objects.filter(usuario = self.user)
@@ -44,7 +56,6 @@ class formularioEventos(forms.ModelForm):
             lista_ramos.append(objeto.nombre)
 
         ramo_evento = self.cleaned_data.get("ramo")
-        print("nombre del ramo", ramo_evento)
         if ramo_evento in lista_ramos:
             return ramo_evento
         else:

@@ -19,9 +19,7 @@ def calendario_view(request):
         contexto.append(dic)
 
     return render(request, "calendario_view.html", {"eventos":contexto})
-    #No se cm chucha sabe donde buscar el template
-    #Si sale error en settings añadir la carpeta templates
-    #de la app
+ 
 
 #view que renderiza los formularios:
 def formularioEventos_view(request):
@@ -42,7 +40,6 @@ def formularioEventos_view(request):
     if form1.is_valid():
     
         evento = eventos.objects.filter(usuario = request.user).filter(nombre =  form1['event_id'].value())
-        evento = evento[0]
         evento.delete()
 
         form1 = eliminarEvento(request = request)
